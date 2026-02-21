@@ -1,170 +1,383 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VicentJ & Gabinet</title>
-
-<style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f5f5f5;
-}
-
-header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:36px;
-}
-
-section{
-    padding:60px 10%;
-    background:white;
-    margin-bottom:20px;
-}
-
-h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.contact-info{
-    text-align:center;
-    font-size:18px;
-    line-height:1.8;
-}
-
-.map-container{
-    margin-top:30px;
-    text-align:center;
-}
-
-iframe{
-    width:100%;
-    max-width:800px;
-    height:400px;
-    border:0;
-}
-
-.catalog-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-.catalog-item{
-    background:white;
-    padding:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.catalog-item:hover{
-    transform:scale(1.03);
-}
-
-.catalog-item img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vicent & Gabinet | Custom Cabinets & Retail Displays | Hialeah, FL</title>
+  <meta name="description" content="Custom cabinets, millwork, retail displays, fixtures, gondolas, acrylic & wood fabrication in Hialeah, Florida. Fast quotes." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
+  <!-- Top bar (como OnDisplay: email + phone) -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a>
+      <span class="dot">•</span>
+      <a href="tel:+13055705251">+1 305-570-5251</a>
+    </div>
+  </div>
 
-<header>
-    <h1>VicentJ & Gabinet</h1>
-    <p>Diseño y fabricación de mobiliario comercial y residencial</p>
-</header>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#home">
+        <span class="brand__mark">V&G</span>
+        <span class="brand__name">Vicent & Gabinet</span>
+      </a>
 
-<!-- CONTACTO -->
-<section>
-    <h2>Contacto</h2>
-    <div class="contact-info">
-        <p><strong>Dirección:</strong> Av. Principal #123, Ciudad</p>
-        <p><strong>Teléfono:</strong> +52 55 0000 0000</p>
-        <p><strong>Email:</strong> contacto@vicentj.com</p>
-        <p><strong>Horario:</strong> Lunes a Viernes 9:00am - 6:00pm</p>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" data-nav>
+        <a href="#products">Top Products</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#catalog">Portfolio</a>
+        <a class="btn btn--small" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="pill">Hialeah, FL • Custom Fabrication • Cabinets • Retail Fixtures</p>
+          <h1>Elevate your brand with custom cabinets & display solutions.</h1>
+          <p class="lead">
+            We design, fabricate, and install custom cabinetry, millwork, retail displays, gondolas, and
+            branded fixtures with premium finishes.
+          </p>
+          <div class="hero__cta">
+            <a class="btn" href="#catalog">See Portfolio</a>
+            <a class="btn btn--ghost" href="#contact">Get a Quote</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat"><div class="stat__num">Fast</div><div class="stat__label">quotes</div></div>
+            <div class="stat"><div class="stat__num">Custom</div><div class="stat__label">fabrication</div></div>
+            <div class="stat"><div class="stat__num">Install</div><div class="stat__label">available</div></div>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="mediaCard">
+            <img src="assets/img/hero.jpg" alt="Vicent & Gabinet - custom work" />
+          </div>
+          <div class="floating">
+            <div class="floating__title">Send photos + measurements</div>
+            <div class="floating__text">We reply fast via WhatsApp or email.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (como “From OnDisplay Inc.”) -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>From Vicent & Gabinet</h2>
+          <p>Where quality and precision meet innovation.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Custom builds, premium finish</h3>
+            <p>
+              We manufacture custom cabinets, retail fixtures, and branded displays for residential and commercial
+              clients. We focus on clean detailing, solid construction, and reliable delivery.
+            </p>
+            <ul class="list">
+              <li>Cabinets (kitchens, vanities, closets)</li>
+              <li>Retail displays (gondolas, outposts, stockers)</li>
+              <li>Custom signage / branding elements</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Based in Hialeah, Florida</h3>
+            <p>
+              Serving local projects and shipping where needed. If you have drawings, measurements, or reference photos,
+              we can quote quickly.
+            </p>
+            <div class="ctaRow">
+              <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://wa.me/13055705251">WhatsApp</a>
+              <a class="btn btn--ghost" href="mailto:vicentandgabinet@gmail.com">Email</a>
+              <a class="btn" href="#contact">Request Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP PRODUCTS BY CATEGORY (como OnDisplay) -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section__head">
+          <h2>Top Products By Category</h2>
+          <p>Browse our most requested builds.</p>
+        </div>
+
+        <div class="grid grid--4">
+          <article class="cat">
+            <h3>Cabinets</h3>
+            <p>Kitchens, vanities, closets, built-ins.</p>
+            <a class="link" href="#catalog" data-filter-jump="cabinets">See Portfolio →</a>
+          </article>
+
+          <article class="cat">
+            <h3>Retail Displays</h3>
+            <p>Gondolas, stockers, islands, outposts.</p>
+            <a class="link" href="#catalog" data-filter-jump="retail">See Portfolio →</a>
+          </article>
+
+          <article class="cat">
+            <h3>Back Walls</h3>
+            <p>Slat walls, feature walls, LED accents.</p>
+            <a class="link" href="#catalog" data-filter-jump="custom">See Portfolio →</a>
+          </article>
+
+          <article class="cat">
+            <h3>Branding / Signage</h3>
+            <p>Letters, plaques, details & trims.</p>
+            <a class="link" href="#catalog" data-filter-jump="custom">See Portfolio →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (como OnDisplay menu Services) -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>Services</h2>
+          <p>End-to-end delivery from concept to install.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card">
+            <h3>Custom Fabrication</h3>
+            <p>Wood, laminate, mixed materials—built to spec.</p>
+          </div>
+          <div class="card">
+            <h3>Design Support</h3>
+            <p>We work from sketches, CAD, photos, or measurements.</p>
+          </div>
+          <div class="card">
+            <h3>Installation</h3>
+            <p>Professional install with clean finishing and alignment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES (como OnDisplay Industries) -->
+    <section class="section" id="industries">
+      <div class="container">
+        <div class="section__head">
+          <h2>Industries</h2>
+          <p>Where our work performs best.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <div class="card"><h3>Retail & Shopping</h3><p>Fixtures that sell and look premium.</p></div>
+          <div class="card"><h3>Offices & Facilities</h3><p>Built-ins, storage, walls, counters.</p></div>
+          <div class="card"><h3>Residential</h3><p>Kitchens, closets, vanities, custom carpentry.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED BY (logos placeholders) -->
+    <section class="section section--alt" id="trusted">
+      <div class="container">
+        <div class="section__head">
+          <h2>Trusted By</h2>
+          <p>Replace these with your client logos when ready.</p>
+        </div>
+
+        <div class="logoRow">
+          <div class="logo">LOGO</div><div class="logo">LOGO</div><div class="logo">LOGO</div>
+          <div class="logo">LOGO</div><div class="logo">LOGO</div><div class="logo">LOGO</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG / PORTFOLIO (your photos) -->
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <h2>Portfolio</h2>
+            <p>Click any image to view large. Use filters.</p>
+          </div>
+          <a class="btn btn--ghost" href="#contact">Get a Quote</a>
+        </div>
+
+        <div class="filters" data-filters>
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="cabinets">Cabinets</button>
+          <button class="chip" data-filter="retail">Retail</button>
+          <button class="chip" data-filter="custom">Custom</button>
+        </div>
+
+        <div class="masonry" data-grid>
+          <!-- Replace src with your uploaded images -->
+          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/01.jpg" alt="Custom project 01" /></figure>
+          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/02.jpg" alt="Retail project 02" /></figure>
+          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/03.jpg" alt="Retail project 03" /></figure>
+          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/04.jpg" alt="Custom project 04" /></figure>
+          <figure class="tile" data-tag="cabinets"><img src="assets/img/catalog/05.jpg" alt="Cabinets project 05" /></figure>
+          <figure class="tile" data-tag="cabinets"><img src="assets/img/catalog/06.jpg" alt="Cabinets project 06" /></figure>
+          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/07.jpg" alt="Retail project 07" /></figure>
+          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/08.jpg" alt="Custom project 08" /></figure>
+          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/09.jpg" alt="Retail project 09" /></figure>
+          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/10.jpg" alt="Custom project 10" /></figure>
+          <figure class="tile" data-tag="cabinets"><img src="assets/img/catalog/11.jpg" alt="Cabinets project 11" /></figure>
+          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/12.jpg" alt="Retail project 12" /></figure>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" data-lightbox aria-hidden="true">
+          <button class="lightbox__close" data-close aria-label="Close">×</button>
+          <img class="lightbox__img" data-lightbox-img alt="Large view" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (form + map like OnDisplay contact section) -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact us today</h2>
+          <p>Send details and we’ll get back fast.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <form class="card form" action="https://formsubmit.co/vicentandgabinet@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New quote request - Vicent & Gabinet" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <div class="field">
+              <label>Name</label>
+              <input name="name" required />
+            </div>
+
+            <div class="field">
+              <label>Phone</label>
+              <input name="phone" />
+            </div>
+
+            <div class="field">
+              <label>Company</label>
+              <input name="company" />
+            </div>
+
+            <div class="field">
+              <label>City/State</label>
+              <input name="location" placeholder="Hialeah, FL" />
+            </div>
+
+            <div class="field">
+              <label>Email</label>
+              <input name="email" type="email" required />
+            </div>
+
+            <div class="field">
+              <label>Comment</label>
+              <textarea name="message" rows="6" placeholder="Measurements, materials, timeline, photos link…"></textarea>
+            </div>
+
+            <button class="btn" type="submit">Send</button>
+            <p class="muted small">Tip: You can also message us on WhatsApp for the fastest response.</p>
+          </form>
+
+          <div class="card">
+            <h3>Contact</h3>
+            <p class="muted">Phone, email, address & directions.</p>
+
+            <div class="contactBox">
+              <a class="btn btn--ghost" href="tel:+13055705251">Call: +1 305-570-5251</a>
+              <a class="btn btn--ghost" href="mailto:vicentandgabinet@gmail.com">Email</a>
+              <a class="btn" target="_blank" rel="noopener" href="https://wa.me/13055705251">WhatsApp</a>
+            </div>
+
+            <hr class="hr" />
+
+            <p class="muted">
+              <strong>Address:</strong><br/>
+              924 W 22 St, Hialeah, FL 33010, United States
+            </p>
+
+            <div class="mapWrap">
+              <iframe
+                src="https://www.google.com/maps?q=924+W+22+St,+Hialeah,+FL+33010&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen="">
+              </iframe>
+            </div>
+
+            <p class="muted small" style="margin-top:10px;">
+              <a target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/dir/?api=1&destination=924+W+22+St,+Hialeah,+FL+33010">
+                Open directions →
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (simple section) -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <h2>Reviews</h2>
+          <p>Add your Google reviews here when ready.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <figure class="quote"><blockquote>“Great quality and clean installation.”</blockquote><figcaption>— Customer</figcaption></figure>
+          <figure class="quote"><blockquote>“Very professional and fast response.”</blockquote><figcaption>— Customer</figcaption></figure>
+          <figure class="quote"><blockquote>“Highly recommended custom work.”</blockquote><figcaption>— Customer</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark">V&G</span>
+          <span class="brand__name">Vicent & Gabinet</span>
+        </div>
+        <p class="muted">Custom Cabinets • Retail Fixtures • Custom Fabrication</p>
+      </div>
+
+      <div>
+        <h4>Address</h4>
+        <p class="muted">924 W 22 St, Hialeah, FL 33010, United States</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer__list">
+          <li><a href="tel:+13055705251">+1 305-570-5251</a></li>
+          <li><a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a></li>
+          <li><a target="_blank" rel="noopener" href="https://wa.me/13055705251">WhatsApp</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="map-container">
-        <h3>Cómo Localizarnos</h3>
-        <iframe 
-        src="https://www.google.com/maps?q=Av.+Principal+123&output=embed">
-        </iframe>
+    <div class="container footer__bottom">
+      <small>© <span id="year"></span> Vicent & Gabinet. All rights reserved.</small>
+      <small class="muted">Built for GitHub Pages</small>
     </div>
-</section>
+  </footer>
 
-<!-- CATALOGO -->
-<section>
-    <h2>Catálogo de Productos</h2>
-    <div class="catalog-grid">
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.11 PM.jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.11 PM (3).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.11 PM (4).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.11 PM (5).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.11 PM (6).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.11 PM (7).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.12 PM (1).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.12 PM (2).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.12 PM (3).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.12 PM (4).jpeg">
-        </div>
-
-        <div class="catalog-item">
-            <img src="WhatsApp Image 2026-01-28 at 5.29.12 PM (5).jpeg">
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    © 2026 VicentJ & Gabinet | Todos los derechos reservados
-</footer>
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
