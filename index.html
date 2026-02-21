@@ -9,22 +9,23 @@
 </head>
 
 <body>
-  <!-- Top bar (como OnDisplay: email + phone) -->
+  <!-- Top bar -->
   <div class="topbar">
     <div class="container topbar__inner">
       <a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a>
-      <span class="dot">•</span>
-      <a href="tel:+13055705251">+1 305-570-5251</a>
+      <a href="tel:+17863302668">+1 786-330-2668</a>
     </div>
   </div>
 
+  <!-- Header -->
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="#home">
+      <a class="brand" href="#home" style="display:flex;align-items:center;gap:10px;">
         <span class="brand__mark">V&G</span>
         <span class="brand__name">Vicent & Gabinet</span>
       </a>
 
+      <!-- Burger (mobile) -->
       <button class="burger" aria-label="Open menu" aria-expanded="false" data-burger>
         <span></span><span></span><span></span>
       </button>
@@ -34,47 +35,30 @@
         <a href="#services">Services</a>
         <a href="#industries">Industries</a>
         <a href="#catalog">Portfolio</a>
-        <a class="btn btn--small" href="#contact">Contact</a>
+        <a class="btn" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="home">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="pill">Hialeah, FL • Custom Fabrication • Cabinets • Retail Fixtures</p>
-          <h1>Elevate your brand with custom cabinets & display solutions.</h1>
-          <p class="lead">
-            We design, fabricate, and install custom cabinetry, millwork, retail displays, gondolas, and
-            branded fixtures with premium finishes.
-          </p>
-          <div class="hero__cta">
-            <a class="btn" href="#catalog">See Portfolio</a>
+
+    <!-- HERO FULL -->
+    <section class="hero-full">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Custom Cabinets & Retail Displays</h1>
+          <p>Premium fabrication in Hialeah, Florida</p>
+
+          <div class="hero-buttons" style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a class="btn" href="#catalog">View Portfolio</a>
             <a class="btn btn--ghost" href="#contact">Get a Quote</a>
-          </div>
-
-          <div class="hero__stats">
-            <div class="stat"><div class="stat__num">Fast</div><div class="stat__label">quotes</div></div>
-            <div class="stat"><div class="stat__num">Custom</div><div class="stat__label">fabrication</div></div>
-            <div class="stat"><div class="stat__num">Install</div><div class="stat__label">available</div></div>
-          </div>
-        </div>
-
-        <div class="hero__media">
-          <div class="mediaCard">
-            <img src="assets/img/hero.jpg" alt="Vicent & Gabinet - custom work" />
-          </div>
-          <div class="floating">
-            <div class="floating__title">Send photos + measurements</div>
-            <div class="floating__text">We reply fast via WhatsApp or email.</div>
+            <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://wa.me/17863302668">WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT (como “From OnDisplay Inc.”) -->
+    <!-- ABOUT -->
     <section class="section section--alt" id="about">
       <div class="container">
         <div class="section__head">
@@ -89,11 +73,6 @@
               We manufacture custom cabinets, retail fixtures, and branded displays for residential and commercial
               clients. We focus on clean detailing, solid construction, and reliable delivery.
             </p>
-            <ul class="list">
-              <li>Cabinets (kitchens, vanities, closets)</li>
-              <li>Retail displays (gondolas, outposts, stockers)</li>
-              <li>Custom signage / branding elements</li>
-            </ul>
           </div>
 
           <div class="card">
@@ -102,8 +81,8 @@
               Serving local projects and shipping where needed. If you have drawings, measurements, or reference photos,
               we can quote quickly.
             </p>
-            <div class="ctaRow">
-              <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://wa.me/13055705251">WhatsApp</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+              <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://wa.me/17863302668">WhatsApp</a>
               <a class="btn btn--ghost" href="mailto:vicentandgabinet@gmail.com">Email</a>
               <a class="btn" href="#contact">Request Quote</a>
             </div>
@@ -112,7 +91,7 @@
       </div>
     </section>
 
-    <!-- TOP PRODUCTS BY CATEGORY (como OnDisplay) -->
+    <!-- TOP PRODUCTS -->
     <section class="section" id="products">
       <div class="container">
         <div class="section__head">
@@ -120,35 +99,29 @@
           <p>Browse our most requested builds.</p>
         </div>
 
-        <div class="grid grid--4">
-          <article class="cat">
+        <div class="grid grid--3">
+          <div class="card">
             <h3>Cabinets</h3>
             <p>Kitchens, vanities, closets, built-ins.</p>
-            <a class="link" href="#catalog" data-filter-jump="cabinets">See Portfolio →</a>
-          </article>
+            <a href="#catalog" style="font-weight:800;color:#2563eb;">See Portfolio →</a>
+          </div>
 
-          <article class="cat">
+          <div class="card">
             <h3>Retail Displays</h3>
             <p>Gondolas, stockers, islands, outposts.</p>
-            <a class="link" href="#catalog" data-filter-jump="retail">See Portfolio →</a>
-          </article>
+            <a href="#catalog" style="font-weight:800;color:#2563eb;">See Portfolio →</a>
+          </div>
 
-          <article class="cat">
-            <h3>Back Walls</h3>
-            <p>Slat walls, feature walls, LED accents.</p>
-            <a class="link" href="#catalog" data-filter-jump="custom">See Portfolio →</a>
-          </article>
-
-          <article class="cat">
-            <h3>Branding / Signage</h3>
-            <p>Letters, plaques, details & trims.</p>
-            <a class="link" href="#catalog" data-filter-jump="custom">See Portfolio →</a>
-          </article>
+          <div class="card">
+            <h3>Custom / Branding</h3>
+            <p>Feature walls, trims, letters, plaques.</p>
+            <a href="#catalog" style="font-weight:800;color:#2563eb;">See Portfolio →</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (como OnDisplay menu Services) -->
+    <!-- SERVICES -->
     <section class="section section--alt" id="services">
       <div class="container">
         <div class="section__head">
@@ -173,7 +146,7 @@
       </div>
     </section>
 
-    <!-- INDUSTRIES (como OnDisplay Industries) -->
+    <!-- INDUSTRIES -->
     <section class="section" id="industries">
       <div class="container">
         <div class="section__head">
@@ -189,64 +162,32 @@
       </div>
     </section>
 
-    <!-- TRUSTED BY (logos placeholders) -->
-    <section class="section section--alt" id="trusted">
-      <div class="container">
-        <div class="section__head">
-          <h2>Trusted By</h2>
-          <p>Replace these with your client logos when ready.</p>
-        </div>
-
-        <div class="logoRow">
-          <div class="logo">LOGO</div><div class="logo">LOGO</div><div class="logo">LOGO</div>
-          <div class="logo">LOGO</div><div class="logo">LOGO</div><div class="logo">LOGO</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CATALOG / PORTFOLIO (your photos) -->
+    <!-- PORTFOLIO -->
     <section class="section" id="catalog">
       <div class="container">
-        <div class="section__head section__head--row">
-          <div>
-            <h2>Portfolio</h2>
-            <p>Click any image to view large. Use filters.</p>
-          </div>
-          <a class="btn btn--ghost" href="#contact">Get a Quote</a>
+        <div class="section__head">
+          <h2>Portfolio</h2>
+          <p>Upload your images into <b>assets/img/catalog/</b> and name them <b>01.jpg, 02.jpg...</b></p>
         </div>
 
-        <div class="filters" data-filters>
-          <button class="chip is-active" data-filter="all">All</button>
-          <button class="chip" data-filter="cabinets">Cabinets</button>
-          <button class="chip" data-filter="retail">Retail</button>
-          <button class="chip" data-filter="custom">Custom</button>
-        </div>
-
-        <div class="masonry" data-grid>
-          <!-- Replace src with your uploaded images -->
-          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/01.jpg" alt="Custom project 01" /></figure>
-          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/02.jpg" alt="Retail project 02" /></figure>
-          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/03.jpg" alt="Retail project 03" /></figure>
-          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/04.jpg" alt="Custom project 04" /></figure>
-          <figure class="tile" data-tag="cabinets"><img src="assets/img/catalog/05.jpg" alt="Cabinets project 05" /></figure>
-          <figure class="tile" data-tag="cabinets"><img src="assets/img/catalog/06.jpg" alt="Cabinets project 06" /></figure>
-          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/07.jpg" alt="Retail project 07" /></figure>
-          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/08.jpg" alt="Custom project 08" /></figure>
-          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/09.jpg" alt="Retail project 09" /></figure>
-          <figure class="tile" data-tag="custom"><img src="assets/img/catalog/10.jpg" alt="Custom project 10" /></figure>
-          <figure class="tile" data-tag="cabinets"><img src="assets/img/catalog/11.jpg" alt="Cabinets project 11" /></figure>
-          <figure class="tile" data-tag="retail"><img src="assets/img/catalog/12.jpg" alt="Retail project 12" /></figure>
-        </div>
-
-        <!-- Lightbox -->
-        <div class="lightbox" data-lightbox aria-hidden="true">
-          <button class="lightbox__close" data-close aria-label="Close">×</button>
-          <img class="lightbox__img" data-lightbox-img alt="Large view" />
+        <div class="masonry">
+          <div class="tile"><img src="assets/img/catalog/01.jpg" alt="Project 01"></div>
+          <div class="tile"><img src="assets/img/catalog/02.jpg" alt="Project 02"></div>
+          <div class="tile"><img src="assets/img/catalog/03.jpg" alt="Project 03"></div>
+          <div class="tile"><img src="assets/img/catalog/04.jpg" alt="Project 04"></div>
+          <div class="tile"><img src="assets/img/catalog/05.jpg" alt="Project 05"></div>
+          <div class="tile"><img src="assets/img/catalog/06.jpg" alt="Project 06"></div>
+          <div class="tile"><img src="assets/img/catalog/07.jpg" alt="Project 07"></div>
+          <div class="tile"><img src="assets/img/catalog/08.jpg" alt="Project 08"></div>
+          <div class="tile"><img src="assets/img/catalog/09.jpg" alt="Project 09"></div>
+          <div class="tile"><img src="assets/img/catalog/10.jpg" alt="Project 10"></div>
+          <div class="tile"><img src="assets/img/catalog/11.jpg" alt="Project 11"></div>
+          <div class="tile"><img src="assets/img/catalog/12.jpg" alt="Project 12"></div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT (form + map like OnDisplay contact section) -->
+    <!-- CONTACT + MAP -->
     <section class="section section--alt" id="contact">
       <div class="container">
         <div class="section__head">
@@ -255,60 +196,49 @@
         </div>
 
         <div class="grid grid--2">
-          <form class="card form" action="https://formsubmit.co/vicentandgabinet@gmail.com" method="POST">
+          <form class="card" action="https://formsubmit.co/vicentandgabinet@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New quote request - Vicent & Gabinet" />
             <input type="hidden" name="_captcha" value="false" />
 
-            <div class="field">
-              <label>Name</label>
-              <input name="name" required />
-            </div>
+            <div style="display:grid;gap:10px;">
+              <div>
+                <label style="font-weight:800;color:#64748b;">Name</label>
+                <input name="name" required style="width:100%;padding:12px;border-radius:14px;border:1px solid rgba(15,23,42,.15);" />
+              </div>
 
-            <div class="field">
-              <label>Phone</label>
-              <input name="phone" />
-            </div>
+              <div>
+                <label style="font-weight:800;color:#64748b;">Phone</label>
+                <input name="phone" style="width:100%;padding:12px;border-radius:14px;border:1px solid rgba(15,23,42,.15);" />
+              </div>
 
-            <div class="field">
-              <label>Company</label>
-              <input name="company" />
-            </div>
+              <div>
+                <label style="font-weight:800;color:#64748b;">Email</label>
+                <input name="email" type="email" required style="width:100%;padding:12px;border-radius:14px;border:1px solid rgba(15,23,42,.15);" />
+              </div>
 
-            <div class="field">
-              <label>City/State</label>
-              <input name="location" placeholder="Hialeah, FL" />
-            </div>
+              <div>
+                <label style="font-weight:800;color:#64748b;">Message</label>
+                <textarea name="message" rows="6" style="width:100%;padding:12px;border-radius:14px;border:1px solid rgba(15,23,42,.15);"></textarea>
+              </div>
 
-            <div class="field">
-              <label>Email</label>
-              <input name="email" type="email" required />
+              <button class="btn" type="submit">Send</button>
+              <p style="margin:0;color:#64748b;font-weight:650;">Fast response via WhatsApp.</p>
             </div>
-
-            <div class="field">
-              <label>Comment</label>
-              <textarea name="message" rows="6" placeholder="Measurements, materials, timeline, photos link…"></textarea>
-            </div>
-
-            <button class="btn" type="submit">Send</button>
-            <p class="muted small">Tip: You can also message us on WhatsApp for the fastest response.</p>
           </form>
 
           <div class="card">
-            <h3>Contact</h3>
-            <p class="muted">Phone, email, address & directions.</p>
+            <h3 style="margin-top:0;">Contact</h3>
+            <p><strong>Phone:</strong> <a href="tel:+17863302668">+1 786-330-2668</a></p>
+            <p><strong>Email:</strong> <a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a></p>
+            <p><strong>Address:</strong><br>924 W 22 St, Hialeah, FL 33010, United States</p>
 
-            <div class="contactBox">
-              <a class="btn btn--ghost" href="tel:+13055705251">Call: +1 305-570-5251</a>
-              <a class="btn btn--ghost" href="mailto:vicentandgabinet@gmail.com">Email</a>
-              <a class="btn" target="_blank" rel="noopener" href="https://wa.me/13055705251">WhatsApp</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;">
+              <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://wa.me/17863302668">WhatsApp</a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/dir/?api=1&destination=924+W+22+St,+Hialeah,+FL+33010">
+                Directions
+              </a>
             </div>
-
-            <hr class="hr" />
-
-            <p class="muted">
-              <strong>Address:</strong><br/>
-              924 W 22 St, Hialeah, FL 33010, United States
-            </p>
 
             <div class="mapWrap">
               <iframe
@@ -318,66 +248,44 @@
                 allowfullscreen="">
               </iframe>
             </div>
-
-            <p class="muted small" style="margin-top:10px;">
-              <a target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/dir/?api=1&destination=924+W+22+St,+Hialeah,+FL+33010">
-                Open directions →
-              </a>
-            </p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- REVIEWS (simple section) -->
-    <section class="section" id="reviews">
-      <div class="container">
-        <div class="section__head">
-          <h2>Reviews</h2>
-          <p>Add your Google reviews here when ready.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <figure class="quote"><blockquote>“Great quality and clean installation.”</blockquote><figcaption>— Customer</figcaption></figure>
-          <figure class="quote"><blockquote>“Very professional and fast response.”</blockquote><figcaption>— Customer</figcaption></figure>
-          <figure class="quote"><blockquote>“Highly recommended custom work.”</blockquote><figcaption>— Customer</figcaption></figure>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <div class="brand brand--footer">
-          <span class="brand__mark">V&G</span>
-          <span class="brand__name">Vicent & Gabinet</span>
-        </div>
-        <p class="muted">Custom Cabinets • Retail Fixtures • Custom Fabrication</p>
-      </div>
-
-      <div>
-        <h4>Address</h4>
-        <p class="muted">924 W 22 St, Hialeah, FL 33010, United States</p>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <ul class="footer__list">
-          <li><a href="tel:+13055705251">+1 305-570-5251</a></li>
-          <li><a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a></li>
-          <li><a target="_blank" rel="noopener" href="https://wa.me/13055705251">WhatsApp</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <small>© <span id="year"></span> Vicent & Gabinet. All rights reserved.</small>
-      <small class="muted">Built for GitHub Pages</small>
+    <div class="container">
+      <p style="margin:0;font-weight:800;">
+        Vicent & Gabinet • 924 W 22 St, Hialeah, FL 33010 •
+        <a href="tel:+17863302668">+1 786-330-2668</a>
+      </p>
+      <p style="margin:10px 0 0;font-weight:700;">
+        <a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a>
+        • <a target="_blank" rel="noopener" href="https://wa.me/17863302668">WhatsApp</a>
+      </p>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- Mobile menu script -->
+  <script>
+    const burger = document.querySelector("[data-burger]");
+    const nav = document.querySelector("[data-nav]");
+    if (burger && nav) {
+      burger.addEventListener("click", () => {
+        const open = nav.classList.toggle("is-open");
+        burger.setAttribute("aria-expanded", String(open));
+      });
+
+      nav.addEventListener("click", (e) => {
+        if (e.target.tagName.toLowerCase() === "a") {
+          nav.classList.remove("is-open");
+          burger.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  </script>
 </body>
 </html>
