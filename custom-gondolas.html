@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Gondolas | Vicent & Gabinet</title>
+  <meta name="description" content="Custom retail gondolas designed and manufactured by Vicent & Gabinet for stores, showrooms, beauty brands, and commercial spaces in Miami and across the USA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f7f4;
+      --surface: #ffffff;
+      --text: #1f1f1a;
+      --muted: #66665b;
+      --line: #e6e3dc;
+      --accent: #b38952;
+      --accent-dark: #8a673a;
+      --dark: #11110f;
+      --success: #244d36;
+      --shadow: 0 10px 30px rgba(17, 17, 15, 0.08);
+      --radius: 18px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--dark);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .topbar a { color: #fff; opacity: 0.9; }
+    .topbar a:hover { opacity: 1; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 247, 244, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #d5b27a);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 78px 0 56px;
+      background:
+        radial-gradient(circle at top left, rgba(179, 137, 82, 0.12), transparent 32%),
+        linear-gradient(180deg, #faf9f6 0%, #f7f7f4 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--success);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1.02;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 680px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      aspect-ratio: 4 / 4.3;
+      border-radius: 22px;
+      background:
+        linear-gradient(rgba(17,17,15,0.08), rgba(17,17,15,0.12)),
+        url('images/custom-gondola-hero.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #d9d2c7, #f2eee7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      max-width: 220px;
+      box-shadow: var(--shadow);
+      font-size: 14px;
+    }
+
+    section { padding: 68px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p,
+    .intro-text {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .cards-3,
+    .cards-4,
+    .gallery,
+    .process-grid,
+    .faq-grid,
+    .info-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+    .process-grid { grid-template-columns: repeat(4, 1fr); }
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    .info-grid { grid-template-columns: 1fr 1fr; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(179, 137, 82, 0.14);
+      color: var(--accent-dark);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .material-list,
+    .feature-list,
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li::before,
+    .feature-list li::before,
+    .material-list li::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 800;
+      margin-right: 10px;
+    }
+
+    .showcase {
+      background: #f1eee7;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gallery-item {
+      min-height: 320px;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.06);
+      background:
+        linear-gradient(rgba(17,17,15,0.10), rgba(17,17,15,0.24)),
+        url('images/gondola-project-1.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #cfc7bb, #e7e1d8);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item:nth-child(2) {
+      background:
+        linear-gradient(rgba(17,17,15,0.10), rgba(17,17,15,0.24)),
+        url('images/gondola-project-2.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #d8d0c6, #f0ebe3);
+    }
+
+    .gallery-item:nth-child(3) {
+      background:
+        linear-gradient(rgba(17,17,15,0.10), rgba(17,17,15,0.24)),
+        url('images/gondola-project-3.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #d0c6ba, #ece6dc);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta {
+      padding: 72px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #181714 0%, #2e2a23 100%);
+      color: #fff;
+      border-radius: 30px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p { color: rgba(255,255,255,0.82); }
+
+    .contact-panel {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .contact-panel a {
+      display: block;
+      color: #fff;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 50px;
+      background: #fbfaf7;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .muted { color: var(--muted); }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .cta-box,
+      .info-grid,
+      .cards-4,
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cards-3,
+      .gallery,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 14px; }
+      .hero-grid,
+      .hero-stats,
+      .cta-box,
+      .info-grid,
+      .cards-4,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 48px; }
+      section { padding: 52px 0; }
+      .cta-box { padding: 28px; }
+      .topbar-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Custom carpentry, retail fixtures, gondolas, displays and commercial furniture.</div>
+      <div>
+        <a href="tel:7863302668">Call: 786-330-2668</a>
+        &nbsp;|&nbsp;
+        <a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="brand-mark">VG</span>
+        <span>VICENT &amp; GABINET</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a class="active" href="/custom-gondolas">Custom Gondolas</a>
+        <a href="/displays">Displays</a>
+        <a href="/services">Services</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/#contact" class="btn btn-primary">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Built for retail environments</div>
+          <h1>Custom Retail Gondolas Designed to Elevate Your Store.</h1>
+          <p>
+            We design and manufacture custom gondolas for beauty brands, retail stores, showrooms,
+            and commercial spaces. From premium wood finishes to acrylic details and branded layouts,
+            we build display systems that improve presentation, organization, and customer flow.
+          </p>
+          <div class="hero-actions">
+            <a href="#quote" class="btn btn-primary">Get a Fast Quote</a>
+            <a href="#projects" class="btn btn-secondary">View Gondola Projects</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Custom</strong>
+              <span class="muted">Built to your size, finish and merchandising needs.</span>
+            </div>
+            <div class="stat">
+              <strong>Retail-Ready</strong>
+              <span class="muted">Ideal for beauty, fragrance, fashion and specialty stores.</span>
+            </div>
+            <div class="stat">
+              <strong>Miami Based</strong>
+              <span class="muted">Serving local businesses and brand activations.</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-image">
+            <div class="hero-badge">
+              <strong>Premium merchandising fixtures</strong><br>
+              Modular shelving, branded side panels, under-storage and luxury finishes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Why Our Gondolas Work for Modern Retail</h2>
+          </div>
+          <p>
+            A good gondola does more than hold products. It guides the shopping experience, supports branding,
+            and helps stores maximize every square foot.
+          </p>
+        </div>
+        <div class="cards-3">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Tailored Dimensions</h3>
+            <p>Each gondola is built for your space, product categories, customer circulation, and installation requirements.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Premium Materials</h3>
+            <p>We work with wood, MDF, laminates, acrylic, metal accents, and mixed-material combinations for high-end retail presentation.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Brand-Driven Display</h3>
+            <p>We can integrate logo zones, product storytelling areas, shelving systems, lighting concepts, and merchandising layouts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Custom Gondola Applications</h2>
+          </div>
+          <p>Suitable for permanent fixtures, promotional campaigns, premium product launches, and branded shop-in-shop environments.</p>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item">
+            <div class="gallery-caption"><strong>Beauty & Cosmetics</strong><br>Luxury gondolas for perfumes, skincare, makeup and tester displays.</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-caption"><strong>Retail Fixtures</strong><br>Organized shelving and premium finishes for specialty stores and boutiques.</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-caption"><strong>Brand Installations</strong><br>Custom structures for branded activations, in-store sections and product storytelling.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container info-grid">
+        <div>
+          <div class="section-head">
+            <div>
+              <h2>Materials & Finishes</h2>
+            </div>
+          </div>
+          <div class="card">
+            <ul class="material-list">
+              <li>Melamine and laminated wood panels</li>
+              <li>MDF with custom paint finishes</li>
+              <li>Acrylic shelving, pockets and dividers</li>
+              <li>Integrated storage and cabinetry</li>
+              <li>Decorative trims and branded side panels</li>
+              <li>Optional lighting-ready layouts</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="section-head">
+            <div>
+              <h2>What We Can Customize</h2>
+            </div>
+          </div>
+          <div class="card">
+            <ul class="feature-list">
+              <li>Overall width, depth and height</li>
+              <li>Open shelves or enclosed base cabinets</li>
+              <li>Back panels, side branding and header signage</li>
+              <li>Product-specific compartment layouts</li>
+              <li>Color palette and finish matching</li>
+              <li>Single units or multi-unit display systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Our Process</h2>
+          </div>
+          <p>Clear, practical, and production-oriented from concept to final build.</p>
+        </div>
+        <div class="process-grid">
+          <article class="card">
+            <div class="icon">1</div>
+            <h3>Discovery</h3>
+            <p>We review your concept, dimensions, references, brand style, and store requirements.</p>
+          </article>
+          <article class="card">
+            <div class="icon">2</div>
+            <h3>Design Direction</h3>
+            <p>We define structure, materials, finish options, and display functionality.</p>
+          </article>
+          <article class="card">
+            <div class="icon">3</div>
+            <h3>Fabrication</h3>
+            <p>We manufacture the gondola using professional woodworking and fixture fabrication methods.</p>
+          </article>
+          <article class="card">
+            <div class="icon">4</div>
+            <h3>Delivery Support</h3>
+            <p>We coordinate final details so your fixture is ready for installation and merchandising.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <p>Helpful answers for brands, store owners, designers, and purchasing teams.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="card">
+            <h3>Do you build gondolas for specific product categories?</h3>
+            <p>Yes. We can adapt the layout for cosmetics, perfumes, accessories, packaged goods, promotional items, and other retail categories.</p>
+          </article>
+          <article class="card">
+            <h3>Can you match an existing store design?</h3>
+            <p>Yes. We can work from reference images, sketches, dimensions, or an established finish palette to align with your existing environment.</p>
+          </article>
+          <article class="card">
+            <h3>Do you offer fully custom dimensions?</h3>
+            <p>Yes. Each gondola can be fabricated to suit your exact footprint, merchandising strategy, and display needs.</p>
+          </article>
+          <article class="card">
+            <h3>Can you include acrylic and branding elements?</h3>
+            <p>Yes. Acrylic accessories, branded surfaces, and display organization features can all be incorporated into the build.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="quote">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Need a Custom Gondola for Your Store or Brand?</h2>
+            <p>
+              Tell us what you need and we will help you evaluate dimensions, materials,
+              display layout, and fabrication options for your project.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:7863302668">Call Now</a>
+              <a class="btn btn-secondary" href="mailto:vicentandgabinet@gmail.com">Send Email</a>
+            </div>
+          </div>
+          <aside class="contact-panel">
+            <strong>Vicent &amp; Gabinet</strong>
+            <a href="tel:7863302668">786-330-2668</a>
+            <a href="mailto:vicentandgabinet@gmail.com">vicentandgabinet@gmail.com</a>
+            <a href="https://vicentandgabinet.com">vicentandgabinet.com</a>
+            <p class="muted" style="color: rgba(255,255,255,0.72); margin: 12px 0 0;">
+              Custom woodwork, displays, cabinets, acrylic fixtures and commercial carpentry in Miami.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Vicent &amp; Gabinet</strong><br>
+        <span class="muted">Custom carpentry and retail fixture fabrication.</span>
+      </div>
+      <div class="muted">© 2026 Vicent &amp; Gabinet. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
