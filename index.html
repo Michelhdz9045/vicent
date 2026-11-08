@@ -64,6 +64,18 @@
   .hero.has-photo .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
   .hero.has-photo .btn-ghost:hover{background:#fff;color:#111;border-color:#fff}
 
+  /* Residencial / Comercial */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
+  .world{position:relative;overflow:hidden;border-radius:var(--radius);min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:#fff;background:linear-gradient(135deg,#2b2b31,#0f0f11);transition:transform .25s,box-shadow .25s}
+  .world:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.25)}
+  .world .cover{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+  .world:hover .cover{transform:scale(1.05)}
+  .world::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.15) 70%)}
+  .world>*:not(.cover){position:relative;z-index:2}
+  .world h3{font-size:1.7rem;margin-bottom:6px}
+  .world p{color:#e4e4e8;margin-bottom:14px;max-width:420px}
+  .world .more{color:#fff;font-weight:700;border-bottom:2px solid var(--accent);align-self:flex-start;padding-bottom:2px}
+
   .about{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}
   .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
   .panel p{color:var(--muted);margin-top:8px}
@@ -113,7 +125,7 @@
     nav.open{display:block}
     nav ul{flex-direction:column;gap:16px}
     .burger{display:block}
-    .about,.contact-grid{grid-template-columns:1fr}
+    .about,.contact-grid,.two{grid-template-columns:1fr}
     .cols3{grid-template-columns:1fr}
     .gallery{grid-template-columns:repeat(3,1fr)}
     .nav-right .btn{display:none}
@@ -140,6 +152,8 @@
     </a>
     <nav id="menu">
       <ul>
+        <li><a href="#catalog" data-go="residential" data-en="Residential" data-es="Residencial">Residential</a></li>
+        <li><a href="#catalog" data-go="commercial" data-en="Commercial" data-es="Comercial">Commercial</a></li>
         <li><a href="#products" data-en="Top Products" data-es="Productos">Top Products</a></li>
         <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
         <li><a href="#industries" data-en="Industries" data-es="Industrias">Industries</a></li>
@@ -174,6 +188,28 @@
         <span class="tag" data-en="Retail displays" data-es="Exhibidores retail">Retail displays</span>
         <span class="tag" data-en="Acrylic &amp; wood" data-es="Acrílico y madera">Acrylic &amp; wood</span>
         <span class="tag">CNC &amp; Laser</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESIDENCIAL / COMERCIAL -->
+  <section id="worlds">
+    <div class="wrap">
+      <p class="eyebrow" data-en="Two worlds, one standard" data-es="Dos mundos, un estándar">Two worlds, one standard</p>
+      <h2 data-en="What are we building together?" data-es="¿Qué construimos juntos?">What are we building together?</h2>
+      <div class="two">
+        <a class="world" href="#catalog" data-go="residential" data-cover="assets/img/catalog/residential/01.jpg">
+          <div class="cover"></div>
+          <h3 data-en="Residential" data-es="Residencial">Residential</h3>
+          <p data-en="Kitchens, closets, vanities, custom carpentry and built-ins for your home." data-es="Cocinas, closets, vanities, carpintería a medida y muebles empotrados para tu hogar.">Kitchens, closets, vanities, custom carpentry and built-ins for your home.</p>
+          <span class="more" data-en="Explore →" data-es="Explorar →">Explore →</span>
+        </a>
+        <a class="world" href="#catalog" data-go="commercial" data-cover="assets/img/catalog/commercial/01.jpg">
+          <div class="cover"></div>
+          <h3 data-en="Commercial" data-es="Comercial">Commercial</h3>
+          <p data-en="Retail displays, gondolas, counters and fixtures for stores, offices and showrooms." data-es="Exhibidores retail, góndolas, mostradores y fixtures para tiendas, oficinas y showrooms.">Retail displays, gondolas, counters and fixtures for stores, offices and showrooms.</p>
+          <span class="more" data-en="Explore →" data-es="Explorar →">Explore →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -341,6 +377,16 @@
   lb.onclick = () => lb.classList.remove('on');
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('on'); });
 
+  // Enlaces Residencial / Comercial: filtran el portafolio
+  document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => applyFilter(a.dataset.go)));
+
+  // Portada de cada tarjeta = primera foto de su carpeta (si existe)
+  document.querySelectorAll('.world[data-cover]').forEach(w => {
+    const im = new Image();
+    im.onload = () => { w.querySelector('.cover').style.backgroundImage = 'url(' + im.src + ')'; };
+    im.src = w.dataset.cover;
+  });
+
   // Foto de portada (assets/img/hero.jpg): si existe, se usa como fondo del hero
   const heroPhoto = new Image();
   heroPhoto.onload = () => document.querySelector('.hero').classList.add('has-photo');
@@ -378,4 +424,5 @@
 </script>
 </body>
 </html>
+
 
